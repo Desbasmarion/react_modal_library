@@ -34,7 +34,7 @@ const Modal = _ref => {
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "Modal"
-  }, isOpen && /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-container"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "overlay modal-trigger"

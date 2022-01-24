@@ -1,5 +1,5 @@
 import './styles/modal.css'
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Modal = ({ props }) => {
@@ -9,14 +9,16 @@ const Modal = ({ props }) => {
 	};
 
   const [ isOpen, setIsOpen ] = useState(true)
+  console.log(isOpen);
 
   const closeModal = () => {
     setIsOpen(false)
   }
 
   return (
-    <div className='Modal'>
-      <div className="modal-container">
+    <Fragment>
+    {isOpen &&
+        <div className="modal-container">
             <div className="overlay modal-trigger"></div>
             <div className="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
                 <button 
@@ -24,8 +26,10 @@ const Modal = ({ props }) => {
                 className="close-modal modal-trigger" onClick={closeModal}>X</button>
                 <p id="dialogDesc">{props}</p>
             </div>
-        </div>
-    </div>
+          </div>
+    }
+    </Fragment>
+    
   );
 };
 
