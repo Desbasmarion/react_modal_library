@@ -16,7 +16,7 @@ const Modal = ({ props }) => {
 
   return (
     <div className='Modal'>
-      {isOpen && <div className="modal-container">
+      <div className="modal-container">
             <div className="overlay modal-trigger"></div>
             <div className="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
                 <button 
@@ -24,7 +24,7 @@ const Modal = ({ props }) => {
                 className="close-modal modal-trigger" onClick={closeModal}>X</button>
                 <p id="dialogDesc">{props}</p>
             </div>
-        </div>}
+        </div>
     </div>
   );
 };
