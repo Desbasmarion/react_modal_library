@@ -26,7 +26,7 @@ const Modal = _ref => {
   } = _ref;
   Modal.propTypes = {
     text: _propTypes.default.string,
-    close: _propTypes.default.bool || _propTypes.default.func
+    close: _propTypes.default.func
   };
   return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-container"
