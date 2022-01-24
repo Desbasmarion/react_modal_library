@@ -1,8 +1,12 @@
+body {
+  margin: 0 auto;
+}
+
 .modal-container {
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   -webkit-transition: visibility 0.4s;
   transition: visibility 0.4s;
 }
@@ -17,9 +21,7 @@
 }
 
 .modal {
-  width: 95%;
-  max-width: 500px;
-  min-width: 300px;
+  width: 30%;
   padding: 30px;
   background: #fff;
   border-radius: 5px;
@@ -43,12 +45,13 @@
   top: 10px;
   right: 10px;
   cursor: pointer;
-  background: #ff365e;
+  background: red;
   color: #fff;
 }
 
 .modal p {
   line-height: 1.4;
   margin-bottom: 5px;
+  font-size: 20px;
 }
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=modal.css.map */
