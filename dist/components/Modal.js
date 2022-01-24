@@ -21,16 +21,17 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 const Modal = _ref => {
   let {
-    props
+    text,
+    open
   } = _ref;
   Modal.propTypes = {
-    props: _propTypes.default.string
+    text: _propTypes.default.string,
+    open: _propTypes.default.bool
   };
-  const [isOpen, setIsOpen] = (0, _react.useState)(true);
-  console.log(isOpen);
+  const [isOpen, setIsOpen] = (0, _react.useState)(open);
 
   const closeModal = () => {
-    setIsOpen(false);
+    setIsOpen(!open);
   };
 
   return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, isOpen && /*#__PURE__*/_react.default.createElement("div", {
@@ -48,7 +49,7 @@ const Modal = _ref => {
     onClick: closeModal
   }, "X"), /*#__PURE__*/_react.default.createElement("p", {
     id: "dialogDesc"
-  }, props))));
+  }, text))));
 };
 
 var _default = Modal;
