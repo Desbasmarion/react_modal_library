@@ -1,11 +1,11 @@
 "use strict";
 
+require("core-js/modules/web.dom-collections.iterator.js");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-
-require("core-js/modules/web.dom-collections.iterator.js");
 
 require("./styles/modal.css");
 
@@ -22,19 +22,13 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Modal = _ref => {
   let {
     text,
-    open
+    close
   } = _ref;
   Modal.propTypes = {
     text: _propTypes.default.string,
-    open: _propTypes.default.bool
+    close: _propTypes.default.bool
   };
-  const [isOpen, setIsOpen] = (0, _react.useState)(open);
-
-  const closeModal = () => {
-    setIsOpen(!open);
-  };
-
-  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, isOpen && /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-container"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "overlay modal-trigger"
@@ -46,7 +40,7 @@ const Modal = _ref => {
   }, /*#__PURE__*/_react.default.createElement("button", {
     "aria-label": "close modal",
     className: "close-modal modal-trigger",
-    onClick: closeModal
+    onClick: close
   }, "X"), /*#__PURE__*/_react.default.createElement("p", {
     id: "dialogDesc"
   }, text))));

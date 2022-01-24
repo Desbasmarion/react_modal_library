@@ -6,7 +6,7 @@ const Modal = ({ text, close }) => {
 
   Modal.propTypes = {
 		text: PropTypes.string,
-    close: PropTypes.bool
+    close: PropTypes.bool || PropTypes.func
 	};
 
   return (
