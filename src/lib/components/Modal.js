@@ -2,17 +2,17 @@ import './styles/modal.css'
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Modal = ({ props }) => {
+const Modal = ({ text, open }) => {
 
   Modal.propTypes = {
-		props: PropTypes.string,
+		text: PropTypes.string,
+    open: PropTypes.bool
 	};
 
-  const [ isOpen, setIsOpen ] = useState(true)
-  console.log(isOpen);
+  const [ isOpen, setIsOpen ] = useState(open)
 
   const closeModal = () => {
-    setIsOpen(false)
+    setIsOpen(!open)
   }
 
   return (
@@ -24,7 +24,7 @@ const Modal = ({ props }) => {
                 <button 
                 aria-label="close modal"
                 className="close-modal modal-trigger" onClick={closeModal}>X</button>
-                <p id="dialogDesc">{props}</p>
+                <p id="dialogDesc">{text}</p>
             </div>
           </div>
     }

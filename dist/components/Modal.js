@@ -27,14 +27,13 @@ const Modal = _ref => {
     props: _propTypes.default.string
   };
   const [isOpen, setIsOpen] = (0, _react.useState)(true);
+  console.log(isOpen);
 
   const closeModal = () => {
     setIsOpen(false);
   };
 
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "Modal"
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, isOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-container"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "overlay modal-trigger"
