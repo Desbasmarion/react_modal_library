@@ -7,7 +7,7 @@ exports.default = void 0;
 
 require("core-js/modules/web.dom-collections.iterator.js");
 
-require("./styles/modal.scss");
+require("./styles/modal.css");
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -32,7 +32,9 @@ const Modal = _ref => {
     setIsOpen(false);
   };
 
-  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, isOpen && /*#__PURE__*/_react.default.createElement("div", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "Modal"
+  }, isOpen && /*#__PURE__*/_react.default.createElement("div", {
     className: "modal-container"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "overlay modal-trigger"
