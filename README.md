@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# React Modal Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple modal component for React application.</br>
 
-## Available Scripts
+## NPM publication
+[You can see npm publication here](https://www.npmjs.com/package/react_modal_library)
 
-In the project directory, you can run:
+## Installation
+You can install [react_modal_library](https://www.npmjs.com/package/react_modal_library) with **npm** command : </br>
+`npm install react_modal_library`
+</br></br>
+or with **yarn** command : </br>
+`yarn add react_modal_library`
 
-### `npm start`
+## Use react_modal_library
+1. Import Modal component to your file : </br>
+`import { Modal } from 'react_modal_library'`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Insert Modal component at rendering (example) : </br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```js
+import { Modal } from 'react_modal_library';
 
-### `npm test`
+const Form = () => {
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  const [ isOpen, setIsOpen ] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    openModal();
+   };
 
-### `npm run build`
+  return (
+    <div className='Form'>
+      <form method='post'>
+        <div>
+          <label htmlFor='firstName'>First Name</label>
+          <input aria-required="true" type='text' id='firstName' name='firstName' onChange={(e) => setFirstname(e.target.value)} required value={firstname} />
+        </div>
+      </form>
+      <button type='submit' id='saveButton' onClick={(e) => handleSubmit(e)}>Save</button>
+      {isOpen && <Modal text='Employee created' close={closeModal} />}
+    </div>
+  );
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default Form;
+ ```
+  
+  3. Pass props `text` and `close` to Modal component.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Props expected
+* `text` contains text to display in Modal component </br>
+* `close` contains function that returns false
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Demo
+<img width="399" alt="image" src="https://user-images.githubusercontent.com/77681395/151153553-a86b9b78-22bb-4fd4-86d5-4f5a1a7ddc12.png">
