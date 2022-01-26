@@ -1,6 +1,8 @@
 {
   "name": "react_modal_library",
   "version": "0.8.1",
+  "author": "Marion DESBAS",
+  "keywords": ["react", "components", "modal"],
   "private": false,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
